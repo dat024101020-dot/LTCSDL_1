@@ -13,16 +13,16 @@ namespace LTCSDL_1.DAO
     {
         public static DataTable ThongTinSinhVien()
         {
-            string sql = "select*from SINHVIEN";
+            SqlCommand cmd = new SqlCommand("select*from SINHVIEN");
             DataTable dt = new DataTable();
-            dt=KNCSDL.DOCDULIEU(sql);
+            dt=KNCSDL.DOCDULIEU(cmd);
             return dt;              
         }
         public static DataTable MaSVLonNhat()
         {
-            string sql = "select top 1 MaSV from SINHVIEN order by MaSV desc";
+            SqlCommand cmd = new SqlCommand("select top 1 MaSV from SINHVIEN order by MaSV desc");
             DataTable dt = new DataTable();
-            dt = KNCSDL.DOCDULIEU(sql);
+            dt = KNCSDL.DOCDULIEU(cmd);
             return dt;
                 
         }

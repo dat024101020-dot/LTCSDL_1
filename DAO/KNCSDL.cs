@@ -32,23 +32,6 @@ namespace LTCSDL_1.DAO
             if(cnn.State == ConnectionState.Open)
                 cnn.Close();
         }
-        public static DataTable DOCDULIEU(string sql)
-        {
-            MoKetNoi();
-            SqlCommand cd = new SqlCommand(sql, cnn);
-            SqlDataReader dr=cd.ExecuteReader();
-            DataTable dt=new DataTable();
-            dt.Load(dr);
-            DongKetNoi();
-            return dt;
-        }
-        public static void ThucThiTruyVan(string sql)
-        {
-            MoKetNoi();
-            SqlCommand cmd = new SqlCommand(sql, cnn);
-            cmd.ExecuteNonQuery();
-            DongKetNoi();
-        }
         public static void ThucThiTruyVan(SqlCommand cmd)
         {
             MoKetNoi();
